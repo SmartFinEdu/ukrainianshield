@@ -712,9 +712,9 @@
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 flex-1 my-auto">
-                  {/* Left: EMBEDDED MENTIMETER WORD CLOUD */}
+                  {/* Left: EMBEDDED MENTIMETER WORD CLOUD & QR CODE */}
                   <div className="lg:col-span-7 bg-slate-900/90 border border-amber-400/40 p-3 rounded-2xl flex flex-col justify-between shadow-xl">
-                    <div className="flex items-center justify-between mb-2 px-1">
+                    <div className="flex items-center justify-between mb-2 px-1 gap-2">
                       <span className="font-bold text-amber-300 text-sm sm:text-base flex items-center gap-2">
                         <i className="fa-solid fa-cloud text-blue-400"></i> Інтерактивна хмара слів (Mentimeter)
                       </span>
@@ -722,22 +722,42 @@
                         href="https://www.mentimeter.com/app/presentation/algscgeqki3m35qufexkhg5nw6qn7dgg" 
                         target="_blank" 
                         rel="noreferrer"
-                        className="text-xs text-amber-400 hover:underline flex items-center gap-1"
+                        className="text-xs text-amber-400 hover:underline flex items-center gap-1 shrink-0"
                       >
                         Відкрити на весь екран <i className="fa-solid fa-arrow-up-right-from-square"></i>
                       </a>
                     </div>
 
-                    {/* Mentimeter Embed Iframe Container */}
-                    <div className="w-full relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 flex-1 min-h-[260px] sm:min-h-[320px]">
-                      <iframe 
-                        sandbox="allow-popups allow-scripts allow-same-origin allow-presentation" 
-                        allowFullScreen
-                        allowTransparency="true"
-                        frameBorder="0"
-                        src="https://www.mentimeter.com/app/presentation/algscgeqki3m35qufexkhg5nw6qn7dgg/embed" 
-                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                      ></iframe>
+                    {/* Mentimeter Embed + QR Code Container */}
+                    <div className="flex flex-col sm:flex-row gap-3 flex-1 min-h-[260px] sm:min-h-[300px]">
+                      {/* Embed Iframe */}
+                      <div className="w-full relative rounded-xl overflow-hidden border border-slate-700 bg-slate-950 flex-1">
+                        <iframe 
+                          sandbox="allow-popups allow-scripts allow-same-origin allow-presentation" 
+                          allowFullScreen
+                          allowTransparency="true"
+                          frameBorder="0"
+                          src="https://www.mentimeter.com/app/presentation/algscgeqki3m35qufexkhg5nw6qn7dgg/embed" 
+                          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                        ></iframe>
+                      </div>
+
+                      {/* QR Code Container */}
+                      <div className="bg-slate-950 p-2.5 rounded-xl border border-amber-400/30 flex flex-row sm:flex-col items-center justify-center gap-2 shrink-0 sm:w-36">
+                        <img 
+                          src="https://i.postimg.cc/L6g35PTq/Znimok-ekrana-2026-09-27-o-18-28-56.png" 
+                          alt="QR-код для доєднання" 
+                          className="w-20 h-20 sm:w-28 sm:h-28 object-contain rounded-lg border border-amber-400/50 bg-white p-1 shadow"
+                        />
+                        <div className="text-center">
+                          <p className="text-amber-300 font-bold text-xs flex items-center justify-center gap-1">
+                            <i className="fa-solid fa-qrcode"></i> QR-код
+                          </p>
+                          <p className="text-slate-400 text-[10px] leading-tight mt-0.5">
+                            Скануйте для швидкого доєднання
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
